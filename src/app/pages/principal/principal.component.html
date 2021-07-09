@@ -1,0 +1,24 @@
+<h4 class="card-title">Listado Contactos</h4>
+<div style="margin-bottom: 25px" class="input-group">
+    <i style="position: absolute; top: 6px; right: 13px; font-size: 22px; z-index: 9999; color:#999999" class="fa fa-search">
+        
+    </i>
+    <input input  class="form-control" type="text" required="" placeholder="Busca aqui" style=" border-radius: .25rem; position: relative;" />
+</div>
+<table class="table-striped table-sm" style="width: 100%;">
+    <thead>
+        <tr>
+            <th class=" tbl-header pointer tbl-header" style="position: sticky;top: 0;" > Nombre </th> 
+            <th class="tbl-header2" style="position: sticky;top: 0;">Telefono</th>
+            <th class=" tbl-header pointer tbl-header3" style="position: sticky;top: 0;" > fecha declass cumpleaños </th> 
+        </tr>
+        
+    </thead>
+    <tbody>
+        <tr *ngFor="let contacto of contactos" > 
+            <td  >{{contacto.nombre}}</td> 
+            <td>{{contacto.telefono}}</td>
+            <td>{{contacto.fechacumple}}</td>
+        </tr>
+    </tbody>
+</table>
