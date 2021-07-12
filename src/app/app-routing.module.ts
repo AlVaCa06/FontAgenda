@@ -6,7 +6,8 @@ import { ContactoComponent } from './pages/contacto/contacto.component';
  
 const routes: Routes = [
   { path: '', component: PrincipalComponent },
-  { path: 'contacto', component: ContactoComponent }
+  { path: 'contacto', component: ContactoComponent },
+  { path: 'contacto/:id', component: ContactoComponent  },
 
 ];
 

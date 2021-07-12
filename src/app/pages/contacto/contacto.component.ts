@@ -12,17 +12,29 @@ import { Contacto } from '../../models/contacto.model';
 export class ContactoComponent implements OnInit {
  
   contacto: Contacto  = new Contacto();    
-  constructor(private route: ActivatedRoute,
+  constructor(private activatedRoute: ActivatedRoute,
               private _agendaService: AgendaService, 
               private router: Router,  ) {
+                activatedRoute.params.subscribe( params => { 
+                  let id = params['id'];
+                  try{this.contacto.id = id} catch{}
+                  this.cargaContacto();
+                });
     
   } 
   ngOnInit() { ; 
   }  
   GuardaContacto( ) {
    debugger
-  } 
-
-   
-
+    this._agendaService.GuardaContacto(this.contacto)
+   .subscribe((data: any) => {
+      this.router.navigate(['/']);  
+   });
+  }
+  cargaContacto(){
+    this._agendaService.CargaContacto(this.contacto)
+    .subscribe((data: any) => {
+      this.contacto = data[0];
+    }); 
+  }  
 }

@@ -7,22 +7,23 @@
                 <form>
                     <div class="form-group">
                       <label for="nombre">Nombre</label>
-                      <input [(ngModel)]="contacto.nombre" class="form-control" id="nombre"  placeholder="Nombre completo">
+                      <input [(ngModel)]="contacto.nombre" name="nombre" class="form-control" id="nombre"  placeholder="Nombre completo">
                      </div>
                     <div class="form-group">
                         <label for="telefono">Telefono</label>
-                        <input [(ngModel)]="contacto.telefono" class="form-control" id="telefono"  placeholder="Telefono">
+                        <input [(ngModel)]="contacto.telefono" name="telefono" class="form-control" id="telefono"  placeholder="Telefono">
                        </div>
                        <div class="form-group">
                         <label for="correo">Correo</label>
-                        <input [(ngModel)]="contacto.correo" class="form-control" id="correo"  placeholder="Correo">
+                        <input [(ngModel)]="contacto.correo" name="correo" class="form-control" id="correo"  placeholder="Correo">
                        </div>
                        <div class="form-group">
                         <label for="anios">Edad</label>
-                        <input [(ngModel)]="contacto.anios" class="form-control" id="anios" placeholder="Edad">
+                        <input [(ngModel)]="contacto.anios" name="anios" class="form-control" id="anios" placeholder="Edad">
                        </div> 
                     <button (click)="GuardaContacto()" class="btn btn-primary">Guardar</button>
-                  </form>
+                    <button [routerLink]="['/']" class="btn btn-primary">Cancelar</button>
+                </form>
             </div> 
             <div class="col-3"></div> 
         </div>

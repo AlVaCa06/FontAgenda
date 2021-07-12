@@ -19,11 +19,9 @@ export class PrincipalComponent implements OnInit {
   }
  
   ngOnInit() {
-    debugger;
-  //  this.GetUsers();
-    this.GetFormapago(); 
+      this.cargaContactos(); 
   }  
-  GetFormapago( ) {
+  cargaContactos( ) {
     this._agendaService.cargaContactos()
     .subscribe((data: any) => {
       this.contactos = data; 

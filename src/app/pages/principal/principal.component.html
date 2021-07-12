@@ -9,9 +9,12 @@
 <table class="table-striped table-sm" style="width: 100%;">
     <thead>
         <tr>
-            <th class=" tbl-header pointer tbl-header" style="position: sticky;top: 0;" > Nombre </th> 
-            <th class="tbl-header2" style="position: sticky;top: 0;">Telefono</th>
-            <th class=" tbl-header pointer tbl-header3" style="position: sticky;top: 0;" > fecha declass cumpleaños </th> 
+            <th class=" " style="position: sticky;top: 0;" > Nombre </th> 
+            <th class=" " style="position: sticky;top: 0;">Telefono</th>
+            <th class=" " style="position: sticky;top: 0;">Correo</th>
+            <th class="  " style="position: sticky;top: 0;" > Edad</th> 
+            <th class=" " style="position: sticky;top: 0;" ></th> 
+
         </tr>
         
     </thead>
@@ -19,7 +22,13 @@
         <tr *ngFor="let contacto of contactos" > 
             <td  >{{contacto.nombre}}</td> 
             <td>{{contacto.telefono}}</td>
-            <td>{{contacto.fechacumple}}</td>
+            <td>{{contacto.correo}}</td>
+            <td>{{contacto.anios}}</td>
+            <td> 
+                <button [routerLink]="['/contacto', contacto.id ]" class="btn btn-primary btn-sm">Editar</button>
+            </td>
+           
+
         </tr>
     </tbody>
 </table>
