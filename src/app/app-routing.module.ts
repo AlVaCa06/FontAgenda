@@ -1,14 +1,17 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-import { PrincipalComponent } from './pages/principal/principal.component';
-import { ContactoComponent } from './pages/contacto/contacto.component';
+import { Routes, RouterModule } from '@angular/router'; 
+import { LoginGuard } from './services/guard.service';
+import { LoginComponent } from './pages/login/login.component';
 
  
 const routes: Routes = [
-  { path: '', component: PrincipalComponent },
-  { path: 'contacto', component: ContactoComponent },
-  { path: 'contacto/:id', component: ContactoComponent  },
-
+  { path: 'login', component: LoginComponent }, 
+  {
+      path: '',
+      loadChildren: './pages/pages.module#PagesModule',
+      canLoad: [ LoginGuard ]
+  },
+ 
 ];
 
 @NgModule({
